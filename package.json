@@ -6,7 +6,8 @@
   "author": "Bruno Lopes <eusoubruno7@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "ts-node-dev -r tsconfig-paths/register --respawn --transpile-only --ignore-watch node_modules --no-notify ./src"
+    "dev": "ts-node-dev -r tsconfig-paths/register --respawn --transpile-only --ignore-watch node_modules --no-notify ./src",
+    "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js"
   },
   "devDependencies": {
     "@types/express": "^4.17.13",
@@ -21,6 +22,8 @@
   },
   "dependencies": {
     "express": "^4.17.2",
+    "pg": "^8.7.1",
+    "pg-hstore": "^2.3.4",
     "reflect-metadata": "^0.1.13",
     "typeorm": "^0.2.41"
   }
