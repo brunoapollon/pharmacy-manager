@@ -48,6 +48,10 @@ class FunctionaryRepository implements IFunctionaryRepository {
   public async saveFunctionary(functionary: Functionary): Promise<Functionary> {
     return await this.ormFunctionaryRepository.save(functionary);
   }
+
+  public async deleteFunctionary(cpf: string): Promise<Boolean> {
+    return !!(await this.ormFunctionaryRepository.delete(cpf));
+  }
 }
 
 export { FunctionaryRepository };

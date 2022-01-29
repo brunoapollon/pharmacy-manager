@@ -3,6 +3,7 @@ import { CreateUserService } from '@modules/functionaries/service/CreateFunction
 import { ListAllFunctionariesService } from '@modules/functionaries/service/ListAllFunctionariesService';
 import { ShowFunctionaryService } from '@modules/functionaries/service/ShowFunctionaryService';
 import { UpdateFunctionaryService } from '@modules/functionaries/service/UpdateFunctionaryService';
+import { DeleteFunctionaryService } from '@modules/functionaries/service/DeleteFunctionaryService';
 
 class FunctionaryController {
   public async create(request: Request, response: Response): Promise<Response> {
@@ -58,6 +59,22 @@ class FunctionaryController {
     });
 
     return response.status(201).json(functionary);
+  }
+
+  public async delete(request: Request, response: Response): Promise<Response> {
+    const { cpf } = request.body;
+
+    if (!cpf) throw new Error('cpf must be provided');
+
+    const deleteFunctionaryService = new DeleteFunctionaryService();
+
+    const deleteWithSucess = await deleteFunctionaryService.execute({
+      cpf,
+    });
+
+    if (!deleteWithSucess) throw new Error('failed to delete functionary');
+
+    return response.status(201).json({ message: 'delete sucessfully' });
   }
 }
 

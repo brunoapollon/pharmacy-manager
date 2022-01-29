@@ -12,4 +12,6 @@ functionaryRouter.get('/show', functionaryController.show);
 
 functionaryRouter.patch('/update', functionaryController.update);
 
+functionaryRouter.delete('/delete', functionaryController.delete);
+
 export { functionaryRouter };

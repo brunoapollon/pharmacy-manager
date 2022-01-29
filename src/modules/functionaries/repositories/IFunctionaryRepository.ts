@@ -6,4 +6,5 @@ export default interface IFunctionaryRepository {
   create(data: ICreateFunctionaryDTO): Promise<Functionary>;
   listAllfunctionary(): Promise<Functionary[]>;
   saveFunctionary(functionary: Functionary): Promise<Functionary>;
+  deleteFunctionary(cpf: string): Promise<Boolean>;
 }
