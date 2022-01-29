@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
 import { CreateUserService } from 'src/service/CreateFunctionaryService';
 import { ListAllFunctionariesService } from 'src/service/ListAllFunctionariesService';
+import { ShowFunctionaryService } from 'src/service/ShowFunctionaryService';
 
 class FunctionaryController {
   public async create(request: Request, response: Response): Promise<Response> {
@@ -28,6 +29,16 @@ class FunctionaryController {
     const functionaries = await listAllFunctionaries.execute();
 
     return response.status(200).json(functionaries);
+  }
+
+  public async show(request: Request, response: Response): Promise<Response> {
+    const { cpf } = request.body;
+
+    const showFunctionaryService = new ShowFunctionaryService();
+
+    const functionary = await showFunctionaryService.execute({ cpf });
+
+    return response.status(200).json(functionary);
   }
 }
 
