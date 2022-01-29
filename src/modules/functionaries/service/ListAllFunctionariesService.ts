@@ -1,6 +1,7 @@
+import { getCustomRepository } from 'typeorm';
+
 import { Functionary } from '@modules/functionaries/infra/typeorm/entities/Functionary';
 import { FunctionaryRepository } from '@modules/functionaries/infra/typeorm/repositories/FunctionaryRepository';
-import { getCustomRepository } from 'typeorm';
 
 class ListAllFunctionariesService {
   private functionaryRepository: FunctionaryRepository;

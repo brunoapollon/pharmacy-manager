@@ -1,7 +1,8 @@
+import { getCustomRepository } from 'typeorm';
+
 import { Functionary } from '@modules/functionaries/infra/typeorm/entities/Functionary';
 import { FunctionaryRepository } from '@modules/functionaries/infra/typeorm/repositories/FunctionaryRepository';
-
-import { getCustomRepository } from 'typeorm';
+import { AppError } from '@shared/errors/AppError';
 
 interface IRequestUpdateFunctionaryService {
   cpf: string;
@@ -24,9 +25,11 @@ class UpdateFunctionaryService {
     nome,
     telefone,
   }: IRequestUpdateFunctionaryService): Promise<Functionary | undefined> {
+    if (!cpf) throw new AppError('cpf must be provided');
+
     const functionary = await this.ormFunctionaryRepository.findByCPF(cpf);
 
-    if (!functionary) throw new Error('functionary does not exists.');
+    if (!functionary) throw new AppError('functionary does not exists.', 404);
 
     functionary.email = email;
     functionary.endereco = endereco;

@@ -1,7 +1,8 @@
-import { Functionary } from '@modules/functionaries/infra/typeorm/entities/Functionary';
-
-import { FunctionaryRepository } from '@modules/functionaries/infra/typeorm/repositories/FunctionaryRepository';
 import { getCustomRepository } from 'typeorm';
+
+import { Functionary } from '@modules/functionaries/infra/typeorm/entities/Functionary';
+import { FunctionaryRepository } from '@modules/functionaries/infra/typeorm/repositories/FunctionaryRepository';
+import { AppError } from '@shared/errors/AppError';
 
 interface IRequestCreateFunctionaryService {
   cpf: string;
@@ -25,10 +26,13 @@ class CreateUserService {
     nome,
     telefone,
   }: IRequestCreateFunctionaryService): Promise<Functionary> {
+    if (!cpf || !email || !endereco || !nome || !telefone)
+      throw new AppError('missing data for functionary');
+
     const functionaryExists = await this.functionaryRepository.findByCPF(cpf);
 
     if (functionaryExists)
-      throw new Error('there is already an employee with this cpf');
+      throw new AppError('there is already an employee with this cpf');
 
     const functionary = await this.functionaryRepository.create({
       cpf,
