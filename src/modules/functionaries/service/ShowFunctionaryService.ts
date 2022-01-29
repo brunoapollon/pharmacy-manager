@@ -1,5 +1,6 @@
-import { Functionary } from '@entities/Functionary';
-import { FunctionaryRepository } from '@repositories/FunctionaryRepository';
+import { Functionary } from '@modules/functionaries/infra/typeorm/entities/Functionary';
+import { FunctionaryRepository } from '@modules/functionaries/infra/typeorm/repositories/FunctionaryRepository';
+
 import { getCustomRepository } from 'typeorm';
 
 interface IRequestShowFunctionaryService {

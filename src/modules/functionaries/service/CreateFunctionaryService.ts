@@ -1,4 +1,6 @@
-import { FunctionaryRepository } from '@repositories/FunctionaryRepository';
+import { Functionary } from '@modules/functionaries/infra/typeorm/entities/Functionary';
+
+import { FunctionaryRepository } from '@modules/functionaries/infra/typeorm/repositories/FunctionaryRepository';
 import { getCustomRepository } from 'typeorm';
 
 interface IRequestCreateFunctionaryService {
@@ -22,7 +24,7 @@ class CreateUserService {
     endereco,
     nome,
     telefone,
-  }: IRequestCreateFunctionaryService) {
+  }: IRequestCreateFunctionaryService): Promise<Functionary> {
     const functionaryExists = await this.functionaryRepository.findByCPF(cpf);
 
     if (functionaryExists)

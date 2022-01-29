@@ -1,7 +1,7 @@
-import ICreateFunctionaryDTO from '@dtos/ICreateFunctionaryDTO';
-import { Functionary } from '@entities/Functionary';
+import ICreateFunctionaryDTO from '@modules/functionaries/dtos/ICreateFunctionaryDTO';
+import { Functionary } from '@modules/functionaries/infra/typeorm/entities/Functionary';
 import { EntityRepository, getRepository, Repository } from 'typeorm';
-import IFunctionaryRepository from './interfaces/IFunctionaryRepository';
+import IFunctionaryRepository from '@modules/functionaries/repositories/IFunctionaryRepository';
 
 @EntityRepository(Functionary)
 class FunctionaryRepository implements IFunctionaryRepository {

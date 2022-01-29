@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
-import { CreateUserService } from 'src/service/CreateFunctionaryService';
-import { ListAllFunctionariesService } from 'src/service/ListAllFunctionariesService';
-import { ShowFunctionaryService } from 'src/service/ShowFunctionaryService';
+import { CreateUserService } from '@modules/functionaries/service/CreateFunctionaryService';
+import { ListAllFunctionariesService } from '@modules/functionaries/service/ListAllFunctionariesService';
+import { ShowFunctionaryService } from '@modules/functionaries/service/ShowFunctionaryService';
 
 class FunctionaryController {
   public async create(request: Request, response: Response): Promise<Response> {

@@ -1,4 +1,4 @@
-import { FunctionaryController } from '@controllers/FunctionaryController';
+import { FunctionaryController } from '@modules/functionaries/infra/http/controllers/FunctionaryController';
 import { Router } from 'express';
 
 const functionaryRouter = Router();

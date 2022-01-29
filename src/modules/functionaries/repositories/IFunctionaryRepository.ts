@@ -1,5 +1,5 @@
-import ICreateFunctionaryDTO from '@dtos/ICreateFunctionaryDTO';
-import { Functionary } from '@entities/Functionary';
+import ICreateFunctionaryDTO from '@modules/functionaries/dtos/ICreateFunctionaryDTO';
+import { Functionary } from '@modules/functionaries/infra/typeorm/entities/Functionary';
 
 export default interface IFunctionaryRepository {
   findByCPF(cpf: string): Promise<Functionary | undefined>;
