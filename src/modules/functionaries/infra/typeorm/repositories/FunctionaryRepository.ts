@@ -44,6 +44,10 @@ class FunctionaryRepository implements IFunctionaryRepository {
 
     return functionaries;
   }
+
+  public async saveFunctionary(functionary: Functionary): Promise<Functionary> {
+    return await this.ormFunctionaryRepository.save(functionary);
+  }
 }
 
 export { FunctionaryRepository };

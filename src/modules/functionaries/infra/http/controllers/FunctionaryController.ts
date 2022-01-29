@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 import { CreateUserService } from '@modules/functionaries/service/CreateFunctionaryService';
 import { ListAllFunctionariesService } from '@modules/functionaries/service/ListAllFunctionariesService';
 import { ShowFunctionaryService } from '@modules/functionaries/service/ShowFunctionaryService';
+import { UpdateFunctionaryService } from '@modules/functionaries/service/UpdateFunctionaryService';
 
 class FunctionaryController {
   public async create(request: Request, response: Response): Promise<Response> {
@@ -39,6 +40,24 @@ class FunctionaryController {
     const functionary = await showFunctionaryService.execute({ cpf });
 
     return response.status(200).json(functionary);
+  }
+
+  public async update(request: Request, response: Response): Promise<Response> {
+    const { cpf, email, endereco, nome, telefone } = request.body;
+
+    if (!cpf) throw new Error('cpf must be provided');
+
+    const updateFunctionaryService = new UpdateFunctionaryService();
+
+    const functionary = await updateFunctionaryService.execute({
+      cpf,
+      email,
+      endereco,
+      nome,
+      telefone,
+    });
+
+    return response.status(201).json(functionary);
   }
 }
 

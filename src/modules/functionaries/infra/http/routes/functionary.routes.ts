@@ -10,4 +10,6 @@ functionaryRouter.post('/create', functionaryController.create);
 functionaryRouter.get('/list', functionaryController.index);
 functionaryRouter.get('/show', functionaryController.show);
 
+functionaryRouter.patch('/update', functionaryController.update);
+
 export { functionaryRouter };
