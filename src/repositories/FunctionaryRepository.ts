@@ -38,6 +38,12 @@ class FunctionaryRepository implements IFunctionaryRepository {
 
     return createdFunctionary;
   }
+
+  public async listAllfunctionary(): Promise<Functionary[]> {
+    const functionaries = await this.ormFunctionaryRepository.find();
+
+    return functionaries;
+  }
 }
 
 export { FunctionaryRepository };

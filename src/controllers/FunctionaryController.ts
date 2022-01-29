@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import { CreateUserService } from 'src/service/CreateFunctionaryService';
+import { ListAllFunctionariesService } from 'src/service/ListAllFunctionariesService';
 
 class FunctionaryController {
   public async create(request: Request, response: Response): Promise<Response> {
@@ -19,6 +20,14 @@ class FunctionaryController {
     });
 
     return response.status(201).json(functionary);
+  }
+
+  public async index(request: Request, response: Response): Promise<Response> {
+    const listAllFunctionaries = new ListAllFunctionariesService();
+
+    const functionaries = await listAllFunctionaries.execute();
+
+    return response.status(200).json(functionaries);
   }
 }
 
