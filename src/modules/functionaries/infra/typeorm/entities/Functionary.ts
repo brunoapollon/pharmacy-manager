@@ -1,4 +1,5 @@
-import { Entity, PrimaryColumn, Column } from 'typeorm';
+import { Manager } from '@modules/managers/infra/typeorm/entities/Manager';
+import { Entity, PrimaryColumn, Column, ManyToOne } from 'typeorm';
 
 @Entity('funcionarios')
 class Functionary {
@@ -16,6 +17,9 @@ class Functionary {
 
   @Column()
   telefone: string;
+
+  // @ManyToOne(() => Manager, manager => manager.cpf_funcionario)
+  // manager: Manager;
 }
 
 export { Functionary };

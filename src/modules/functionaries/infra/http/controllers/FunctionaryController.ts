@@ -1,10 +1,10 @@
 import { Request, Response } from 'express';
 
-import { CreateUserService } from '@modules/functionaries/service/CreateFunctionaryService';
-import { ListAllFunctionariesService } from '@modules/functionaries/service/ListAllFunctionariesService';
-import { ShowFunctionaryService } from '@modules/functionaries/service/ShowFunctionaryService';
-import { UpdateFunctionaryService } from '@modules/functionaries/service/UpdateFunctionaryService';
-import { DeleteFunctionaryService } from '@modules/functionaries/service/DeleteFunctionaryService';
+import { CreateUserService } from '@modules/functionaries/services/CreateFunctionaryService';
+import { ListAllFunctionariesService } from '@modules/functionaries/services/ListAllFunctionariesService';
+import { ShowFunctionaryService } from '@modules/functionaries/services/ShowFunctionaryService';
+import { UpdateFunctionaryService } from '@modules/functionaries/services/UpdateFunctionaryService';
+import { DeleteFunctionaryService } from '@modules/functionaries/services/DeleteFunctionaryService';
 
 class FunctionaryController {
   public async create(request: Request, response: Response): Promise<Response> {
