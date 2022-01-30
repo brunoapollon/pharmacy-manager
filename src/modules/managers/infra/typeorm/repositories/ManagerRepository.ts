@@ -34,6 +34,10 @@ class ManagerRepository implements IManagerRepository {
 
     return managerCreated;
   }
+
+  public async deleteManager(cpf_funcionario: string): Promise<Boolean> {
+    return !!(await this.ormManagerRepository.delete({ cpf_funcionario }));
+  }
 }
 
 export { ManagerRepository };

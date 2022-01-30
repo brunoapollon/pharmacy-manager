@@ -1,4 +1,5 @@
 import { CreateManagerService } from '@modules/managers/services/CreateManagerService';
+import { DeleteManagerService } from '@modules/managers/services/DeleteManagerService';
 import { ShowManagerService } from '@modules/managers/services/ShowManagerService';
 import { Request, Response } from 'express';
 
@@ -24,6 +25,18 @@ class ManagerController {
     const manager = await showManagerService.execute({ cpf_funcionario });
 
     return response.status(200).json(manager);
+  }
+
+  public async delete(request: Request, response: Response): Promise<Response> {
+    const { cpf_funcionario } = request.body;
+
+    const deleteManagerService = new DeleteManagerService();
+
+    await deleteManagerService.execute({ cpf_funcionario });
+
+    return response
+      .status(201)
+      .json({ message: 'Deleted manager successfully' });
   }
 }
 

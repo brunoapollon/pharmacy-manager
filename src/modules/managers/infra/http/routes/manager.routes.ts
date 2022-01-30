@@ -9,4 +9,6 @@ managerRouter.post('/create', managerController.create);
 
 managerRouter.get('/show', managerController.show);
 
+managerRouter.delete('/delete', managerController.delete);
+
 export { managerRouter };
