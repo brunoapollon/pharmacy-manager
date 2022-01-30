@@ -7,4 +7,6 @@ const managerController = new ManagerController();
 
 managerRouter.post('/create', managerController.create);
 
+managerRouter.get('/show', managerController.show);
+
 export { managerRouter };

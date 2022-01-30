@@ -1,17 +1,14 @@
 import { Functionary } from '@modules/functionaries/infra/typeorm/entities/Functionary';
-import { Entity, PrimaryColumn, Column, JoinColumn, OneToMany } from 'typeorm';
+import { Entity, PrimaryColumn, Column, JoinColumn, OneToOne } from 'typeorm';
 
 @Entity('gerentes')
 class Manager {
   @PrimaryColumn()
   id_gerente: number;
 
-  @Column()
-  cpf_funcionario: string;
-
   @JoinColumn({ name: 'cpf_funcionario' })
-  @OneToMany(() => Functionary, functionary => functionary.cpf)
-  functionary: Functionary;
+  @OneToOne(() => Functionary, { eager: true })
+  cpf_funcionario: string;
 }
 
 export { Manager };
