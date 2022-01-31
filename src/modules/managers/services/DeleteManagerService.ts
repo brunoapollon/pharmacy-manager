@@ -16,13 +16,11 @@ class DeleteManagerService {
   public async execute({
     cpf_funcionario,
   }: IRequestDeleteManagerService): Promise<Boolean> {
-    const resultdeleteManager = await this.ormManagerRepository.deleteManager(
-      cpf_funcionario,
-    );
+    const manager = await this.ormManagerRepository.findByCPF(cpf_funcionario);
 
-    if (!resultdeleteManager) throw new AppError('Fail to delete manager');
+    if (!manager) throw new AppError('manager does not exists', 404);
 
-    return resultdeleteManager;
+    return await this.ormManagerRepository.deleteManager(cpf_funcionario);
   }
 }
 
