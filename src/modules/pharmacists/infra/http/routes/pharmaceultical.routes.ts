@@ -9,4 +9,6 @@ pharmaceuticalRouter.post('/create', pharmaceuticalController.create);
 
 pharmaceuticalRouter.get('/show', pharmaceuticalController.show);
 
+pharmaceuticalRouter.delete('/delete', pharmaceuticalController.delete);
+
 export { pharmaceuticalRouter };

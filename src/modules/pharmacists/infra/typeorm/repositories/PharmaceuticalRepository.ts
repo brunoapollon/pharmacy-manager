@@ -44,6 +44,12 @@ class PharmaceuticalRepository implements IPharmaceuticalRepository {
 
     return pharmaceutical;
   }
+
+  public async deletePharmaceutical(cpf_funcionario: string): Promise<Boolean> {
+    return !!(await this.ormPharmaceuticalRepository.delete({
+      cpf_funcionario,
+    }));
+  }
 }
 
 export { PharmaceuticalRepository };

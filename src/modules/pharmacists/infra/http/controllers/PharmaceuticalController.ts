@@ -1,4 +1,5 @@
 import { CreatePharmaceuticalService } from '@modules/pharmacists/services/CreatePharmaceuticalService';
+import { DeletePharmaceuticalService } from '@modules/pharmacists/services/DeletePharmaceuticalService';
 import { ShowPharmaceuticalService } from '@modules/pharmacists/services/ShowPharmaceuticalService';
 import { Request, Response } from 'express';
 
@@ -26,6 +27,20 @@ class PharmaceuticalController {
     });
 
     return response.status(200).json(pharmaceutical);
+  }
+
+  public async delete(request: Request, response: Response): Promise<Response> {
+    const { cpf_funcionario } = request.body;
+
+    const deletePharmaceuticalService = new DeletePharmaceuticalService();
+
+    await deletePharmaceuticalService.execute({
+      cpf_funcionario,
+    });
+
+    return response
+      .status(200)
+      .json({ message: 'pharmaceutical deleted successfully.' });
   }
 }
 
