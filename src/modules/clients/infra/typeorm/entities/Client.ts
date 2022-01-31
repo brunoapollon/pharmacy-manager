@@ -1,7 +1,7 @@
 import { Entity, PrimaryColumn, Column, ManyToOne } from 'typeorm';
 
-@Entity('funcionarios')
-class Functionary {
+@Entity('clientes')
+class Client {
   @PrimaryColumn()
   cpf: string;
 
@@ -18,4 +18,4 @@ class Functionary {
   telefone: string;
 }
 
-export { Functionary };
+export { Client };
