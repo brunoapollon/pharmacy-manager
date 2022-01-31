@@ -14,11 +14,17 @@ class ManagerRepository implements IManagerRepository {
   public async findByCPF(
     cpf_funcionario: string,
   ): Promise<Manager | undefined> {
-    const functionaryFound = await this.ormManagerRepository.findOne({
+    const managerFound = await this.ormManagerRepository.findOne({
       where: { cpf_funcionario },
     });
 
-    return functionaryFound;
+    return managerFound;
+  }
+
+  public async findByID(id_gerente: number): Promise<Manager | undefined> {
+    const managerFound = await this.ormManagerRepository.findOne(id_gerente);
+
+    return managerFound;
   }
 
   public async create({

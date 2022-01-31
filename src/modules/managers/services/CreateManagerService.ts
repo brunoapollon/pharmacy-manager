@@ -26,12 +26,17 @@ class CreateManagerService {
     if (!cpf_funcionario || !id_gerente)
       throw new AppError('missing data for manager');
 
-    const managerExists = await this.managerRepository.findByCPF(
+    const managerExistsByCPF = await this.managerRepository.findByCPF(
       cpf_funcionario,
     );
 
-    if (managerExists)
+    if (managerExistsByCPF)
       throw new AppError('there is already an manager with this cpf');
+
+    const managerExistsByID = await this.managerRepository.findByID(id_gerente);
+
+    if (managerExistsByID)
+      throw new AppError('there is already an manager with this ID');
 
     const functionaryExists = await this.functionaryRepository.findByCPF(
       cpf_funcionario,
