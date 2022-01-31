@@ -7,4 +7,6 @@ const pharmaceuticalController = new PharmaceuticalController();
 
 pharmaceuticalRouter.post('/create', pharmaceuticalController.create);
 
+pharmaceuticalRouter.get('/show', pharmaceuticalController.show);
+
 export { pharmaceuticalRouter };
