@@ -9,4 +9,6 @@ typeProductRouter.post('/create', typeProductController.create);
 
 typeProductRouter.get('/list', typeProductController.index);
 
+typeProductRouter.delete('/delete/:id', typeProductController.delete);
+
 export { typeProductRouter };
