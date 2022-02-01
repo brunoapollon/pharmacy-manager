@@ -7,4 +7,6 @@ const clientController = new ClientController();
 
 clientRouter.post('/create', clientController.create);
 
+clientRouter.get('/show', clientController.show);
+
 export { clientRouter };

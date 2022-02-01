@@ -1,4 +1,5 @@
 import { CreateClientService } from '@modules/clients/services/CreateClientService';
+import { ShowClientService } from '@modules/clients/services/ShowClientService';
 import { Request, Response } from 'express';
 
 class ClientController {
@@ -16,6 +17,16 @@ class ClientController {
     });
 
     return response.status(201).json(client);
+  }
+
+  public async show(request: Request, response: Response): Promise<Response> {
+    const { cpf } = request.body;
+
+    const showClientService = new ShowClientService();
+
+    const client = await showClientService.execute({ cpf });
+
+    return response.status(200).json(client);
   }
 }
 
