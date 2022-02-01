@@ -9,4 +9,6 @@ clientRouter.post('/create', clientController.create);
 
 clientRouter.get('/show', clientController.show);
 
+clientRouter.delete('/delete', clientController.delete);
+
 export { clientRouter };

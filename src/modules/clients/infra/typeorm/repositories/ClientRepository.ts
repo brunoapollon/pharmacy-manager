@@ -36,6 +36,10 @@ class ClientRepository implements IClientRepository {
 
     return client;
   }
+
+  public async deleteClient(cpf: string): Promise<Boolean> {
+    return !!(await this.ormClientRepository.delete(cpf));
+  }
 }
 
 export { ClientRepository };
