@@ -9,6 +9,8 @@ typeProductRouter.post('/create', typeProductController.create);
 
 typeProductRouter.get('/list', typeProductController.index);
 
+typeProductRouter.patch('/update', typeProductController.update);
+
 typeProductRouter.delete('/delete/:id', typeProductController.delete);
 
 export { typeProductRouter };

@@ -40,6 +40,10 @@ class TypeProductsRepository implements ITypeProductRepository {
   public async deleteProduct(id: number): Promise<Boolean> {
     return !!(await this.ormTypeProductRepository.delete(id));
   }
+
+  public async save(typeProduct: TypeProducts): Promise<void> {
+    await this.ormTypeProductRepository.save(typeProduct);
+  }
 }
 
 export { TypeProductsRepository };

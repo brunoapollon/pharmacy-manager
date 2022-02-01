@@ -1,6 +1,7 @@
 import { CreateTypeProductService } from '@modules/typesProducts/services/CreateTypePropductService';
 import { DeleteTypeProductService } from '@modules/typesProducts/services/DeleteTypeProductService';
 import { ListAllTypeProductsService } from '@modules/typesProducts/services/ListAllTypeProductsService';
+import { UpdateTypeProductService } from '@modules/typesProducts/services/UpdateTypeProductService';
 import { Request, Response } from 'express';
 
 class TypeProductController {
@@ -31,6 +32,19 @@ class TypeProductController {
     await deleteTypeProductService.execute({ id: parseId });
 
     return response.status(201).json({ message: 'Delete successfully' });
+  }
+
+  public async update(request: Request, response: Response): Promise<Response> {
+    const { id, setor } = request.body;
+
+    const updateTypeProductService = new UpdateTypeProductService();
+
+    const typeProductUpdated = await updateTypeProductService.execute({
+      id,
+      setor,
+    });
+
+    return response.status(201).json(typeProductUpdated);
   }
 }
 
