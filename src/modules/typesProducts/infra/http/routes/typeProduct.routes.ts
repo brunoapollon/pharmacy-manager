@@ -13,4 +13,6 @@ typeProductRouter.patch('/update', typeProductController.update);
 
 typeProductRouter.delete('/delete/:id', typeProductController.delete);
 
+typeProductRouter.get('/show/:id', typeProductController.show);
+
 export { typeProductRouter };

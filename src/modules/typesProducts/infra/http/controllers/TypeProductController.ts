@@ -1,6 +1,7 @@
 import { CreateTypeProductService } from '@modules/typesProducts/services/CreateTypePropductService';
 import { DeleteTypeProductService } from '@modules/typesProducts/services/DeleteTypeProductService';
 import { ListAllTypeProductsService } from '@modules/typesProducts/services/ListAllTypeProductsService';
+import { ShowTypeProductService } from '@modules/typesProducts/services/ShowTypeProductService';
 import { UpdateTypeProductService } from '@modules/typesProducts/services/UpdateTypeProductService';
 import { Request, Response } from 'express';
 
@@ -45,6 +46,18 @@ class TypeProductController {
     });
 
     return response.status(201).json(typeProductUpdated);
+  }
+
+  public async show(request: Request, response: Response): Promise<Response> {
+    const { id } = request.params;
+
+    const showTypeProductService = new ShowTypeProductService();
+
+    const parseId = parseInt(id);
+
+    const typeProduct = await showTypeProductService.execute({ id: parseId });
+
+    return response.status(200).json(typeProduct);
   }
 }
 
