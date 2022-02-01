@@ -2,6 +2,7 @@ import { CreateClientService } from '@modules/clients/services/CreateClientServi
 import { DeleteClientService } from '@modules/clients/services/DeleteClientService';
 import { ListAllClientsService } from '@modules/clients/services/ListAllClientsService';
 import { ShowClientService } from '@modules/clients/services/ShowClientService';
+import { UpdateClientService } from '@modules/clients/services/UpdateClientService';
 import { Request, Response } from 'express';
 
 class ClientController {
@@ -49,6 +50,22 @@ class ClientController {
     const clients = await listAllClientsService.execute();
 
     return response.status(200).json(clients);
+  }
+
+  public async update(request: Request, response: Response): Promise<Response> {
+    const { cpf, email, endereco, nome, telefone } = request.body;
+
+    const updateClientService = new UpdateClientService();
+
+    const client = await updateClientService.execute({
+      cpf,
+      email,
+      endereco,
+      nome,
+      telefone,
+    });
+
+    return response.status(201).json(client);
   }
 }
 

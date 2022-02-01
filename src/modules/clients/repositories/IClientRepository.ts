@@ -6,4 +6,5 @@ export default interface IClientRepository {
   create(data: ICreateClientDTO): Promise<Client>;
   deleteClient(cpf: string): Promise<Boolean>;
   listAllClients(): Promise<Client[]>;
+  save(client: Client): Promise<Client>;
 }

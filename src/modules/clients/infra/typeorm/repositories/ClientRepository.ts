@@ -46,6 +46,10 @@ class ClientRepository implements IClientRepository {
 
     return clients;
   }
+
+  public async save(client: Client): Promise<Client> {
+    return await this.ormClientRepository.save(client);
+  }
 }
 
 export { ClientRepository };

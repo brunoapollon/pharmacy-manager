@@ -13,4 +13,6 @@ clientRouter.get('/list', clientController.index);
 
 clientRouter.delete('/delete', clientController.delete);
 
+clientRouter.patch('/update', clientController.update);
+
 export { clientRouter };
