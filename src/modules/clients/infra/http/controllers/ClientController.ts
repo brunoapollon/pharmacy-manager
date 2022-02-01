@@ -1,5 +1,6 @@
 import { CreateClientService } from '@modules/clients/services/CreateClientService';
 import { DeleteClientService } from '@modules/clients/services/DeleteClientService';
+import { ListAllClientsService } from '@modules/clients/services/ListAllClientsService';
 import { ShowClientService } from '@modules/clients/services/ShowClientService';
 import { Request, Response } from 'express';
 
@@ -40,6 +41,14 @@ class ClientController {
     return response
       .status(200)
       .json({ message: 'client deleted successfully' });
+  }
+
+  public async index(request: Request, response: Response): Promise<Response> {
+    const listAllClientsService = new ListAllClientsService();
+
+    const clients = await listAllClientsService.execute();
+
+    return response.status(200).json(clients);
   }
 }
 
