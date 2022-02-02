@@ -7,7 +7,6 @@ import {
   OneToOne,
 } from 'typeorm';
 import { TypeProducts } from '@modules/typesProducts/infra/typeorm/entities/TypeProduct';
-import { Stock } from '@modules/stock/infra/typeorm/entities/Stock';
 
 @Entity('produtos')
 class Product {
