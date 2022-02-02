@@ -27,7 +27,7 @@ class CreateStockService {
     const stockExists = await this.stockRepository.findById(id);
 
     if (stockExists)
-      throw new AppError('there is already an employee with this ID');
+      throw new AppError('there is already an stock with this ID');
 
     const stock = await this.stockRepository.create({
       id,
