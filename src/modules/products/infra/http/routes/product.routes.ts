@@ -9,4 +9,6 @@ productRouter.post('/create', productController.create);
 
 productRouter.get('/show/:id', productController.show);
 
+productRouter.get('/delete/:id', productController.delete);
+
 export { productRouter };

@@ -34,6 +34,10 @@ class ProductRepository implements IProductRepository {
 
     return product;
   }
+
+  public async delete(id: number): Promise<Boolean> {
+    return !!(await this.ormProductRepository.delete(id));
+  }
 }
 
 export { ProductRepository };

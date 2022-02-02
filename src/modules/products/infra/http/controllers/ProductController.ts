@@ -1,4 +1,5 @@
 import { CreateProductService } from '@modules/products/services/CreateProductService';
+import { DeleteProductService } from '@modules/products/services/DeleteProductService';
 import { ShowProductService } from '@modules/products/services/ShowProductService';
 import { Request, Response } from 'express';
 
@@ -28,6 +29,20 @@ class ProductController {
     const product = await showProductService.execute({ id: idParse });
 
     return response.status(200).json(product);
+  }
+
+  public async delete(request: Request, response: Response): Promise<Response> {
+    const { id } = request.params;
+
+    const idParse = parseInt(id);
+
+    const deleteProductService = new DeleteProductService();
+
+    const product = await deleteProductService.execute({ id: idParse });
+
+    return response
+      .status(200)
+      .json({ message: 'Delete product successfully' });
   }
 }
 
