@@ -1,5 +1,5 @@
 import { Entity, PrimaryColumn, Column, JoinColumn, OneToOne } from 'typeorm';
-import { Product } from '@modules/products/infra/typeorm/entities/Product';
+import { Product } from '../../../../products/infra/typeorm/entities/Product';
 
 @Entity('estoques')
 class Stock {

@@ -6,7 +6,7 @@ import {
   JoinColumn,
   OneToOne,
 } from 'typeorm';
-import { TypeProducts } from '@modules/typesProducts/infra/typeorm/entities/TypeProduct';
+import { TypeProducts } from '../../../../typesProducts/infra/typeorm/entities/TypeProduct';
 
 @Entity('produtos')
 class Product {

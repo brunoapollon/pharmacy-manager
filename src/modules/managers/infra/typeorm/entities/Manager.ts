@@ -1,4 +1,4 @@
-import { Functionary } from '@modules/functionaries/infra/typeorm/entities/Functionary';
+import { Functionary } from '../../../../functionaries/infra/typeorm/entities/Functionary';
 import { Entity, PrimaryColumn, Column, JoinColumn, OneToOne } from 'typeorm';
 
 @Entity('gerentes')
