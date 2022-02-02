@@ -1,18 +1,18 @@
 import { Router } from 'express';
-import { ClientController } from '../controllers/SaleController';
+import { SaleController } from '../controllers/SaleController';
 
 const saleRouter = Router();
 
-const clientController = new ClientController();
+const saleController = new SaleController();
 
-saleRouter.post('/create', clientController.create);
+saleRouter.post('/create', saleController.create);
 
-saleRouter.get('/show', clientController.show);
+saleRouter.get('/show', saleController.show);
 
-saleRouter.get('/list', clientController.index);
+saleRouter.get('/list', saleController.index);
 
-saleRouter.delete('/delete', clientController.delete);
+saleRouter.delete('/delete', saleController.delete);
 
-saleRouter.patch('/update', clientController.update);
+saleRouter.patch('/update', saleController.update);
 
 export { saleRouter };

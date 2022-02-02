@@ -3,6 +3,7 @@ import { functionaryRouter } from '@modules/functionaries/infra/http/routes/func
 import { managerRouter } from '@modules/managers/infra/http/routes/manager.routes';
 import { pharmaceuticalRouter } from '@modules/pharmacists/infra/http/routes/pharmaceultical.routes';
 import { productRouter } from '@modules/products/infra/http/routes/product.routes';
+import { saleRouter } from '@modules/sales/infra/http/routes/sale.routes';
 import { stockRouter } from '@modules/stock/infra/http/routes/stock.routes';
 import { typeProductRouter } from '@modules/typesProducts/infra/http/routes/typeProduct.routes';
 import { Router } from 'express';
@@ -16,5 +17,6 @@ routes.use('/client', clientRouter);
 routes.use('/type_product', typeProductRouter);
 routes.use('/stock', stockRouter);
 routes.use('/product', productRouter);
+routes.use('/sale', saleRouter);
 
 export { routes };

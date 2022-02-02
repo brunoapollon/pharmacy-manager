@@ -5,7 +5,7 @@ import { ShowSaleService } from '@modules/sales/services/ShowSaleService';
 import { UpdateSaleService } from '@modules/sales/services/UpdateSaleService';
 import { Request, Response } from 'express';
 
-class ClientController {
+class SaleController {
   public async create(request: Request, response: Response): Promise<Response> {
     const { id, cpf_cliente, cpf_funcionario, id_produto } = request.body;
 
@@ -65,4 +65,4 @@ class ClientController {
   }
 }
 
-export { ClientController };
+export { SaleController };
