@@ -7,7 +7,8 @@ import { Request, Response } from 'express';
 
 class SaleController {
   public async create(request: Request, response: Response): Promise<Response> {
-    const { id, cpf_cliente, cpf_funcionario, id_produto } = request.body;
+    const { id, cpf_cliente, cpf_funcionario, id_produto, valor_recebido } =
+      request.body;
 
     const createSaleService = new CreateSaleService();
 
@@ -16,6 +17,7 @@ class SaleController {
       cpf_cliente,
       cpf_funcionario,
       id_produto,
+      valor_recebido,
     });
 
     return response.status(201).json(sale);
