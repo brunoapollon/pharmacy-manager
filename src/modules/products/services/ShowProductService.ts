@@ -21,7 +21,7 @@ class ShowProductService {
 
     const product = await this.productRepository.findByID(id);
 
-    if (!product) throw new AppError('product not found.');
+    if (!product) throw new AppError('product not found.', 404);
 
     return product;
   }

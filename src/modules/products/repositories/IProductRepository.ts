@@ -5,4 +5,5 @@ export default interface IProductRepository {
   findByID(id: number): Promise<Product | undefined>;
   delete(id: number): Promise<Boolean>;
   create(data: ICreateProductDTO): Promise<Product>;
+  save(product: Product): Promise<void>;
 }

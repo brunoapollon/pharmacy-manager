@@ -1,6 +1,7 @@
 import { CreateProductService } from '@modules/products/services/CreateProductService';
 import { DeleteProductService } from '@modules/products/services/DeleteProductService';
 import { ShowProductService } from '@modules/products/services/ShowProductService';
+import { UpdateProductService } from '@modules/products/services/UpdateProductService';
 import { Request, Response } from 'express';
 
 class ProductController {
@@ -43,6 +44,21 @@ class ProductController {
     return response
       .status(200)
       .json({ message: 'Delete product successfully' });
+  }
+
+  public async update(request: Request, response: Response): Promise<Response> {
+    const { id, nome, preco, id_tipo } = request.body;
+
+    const updateProductService = new UpdateProductService();
+
+    const product = await updateProductService.execute({
+      id,
+      nome,
+      preco,
+      id_tipo,
+    });
+
+    return response.status(201).json(product);
   }
 }
 
