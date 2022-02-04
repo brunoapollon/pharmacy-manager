@@ -28,7 +28,7 @@ Esse projeto é uma API desenvolvida para consumir um banco de dados criado na d
 ```JSON
 Dados requeridos:
 
-	{
+  {
     "cpf": string,
     "nome": string,
     "endereco": string,
@@ -42,7 +42,6 @@ Dados requeridos:
 
 ```JSON
   Dados requeridos: cpf e o cpf do gerente são obrigatórios.
-
   {
     "cpf": string,
     "nome": string,
@@ -131,7 +130,7 @@ Dados requeridos:
 ```JSON
   Dados requeridos:
   {
-	  "cpf_funcionario": string,
+    "cpf_funcionario": string,
   }
 
 ```
@@ -141,7 +140,7 @@ Dados requeridos:
 ```JSON
   Dados requeridos:
   {
-	  "cpf_funcionario": string,
+    "cpf_funcionario": string,
   }
 
 ```
@@ -153,7 +152,7 @@ Dados requeridos:
 ```JSON
 Dados requeridos:
 
-	{
+  {
     "cpf": string,
     "nome": string,
     "endereco": string,
@@ -207,7 +206,7 @@ Dados requeridos:
 ```JSON
 Dados requeridos:
 
-	{
+  {
     "id": number,
     "setor": string
   }
@@ -239,7 +238,7 @@ Dados requeridos:
 ```JSON
 Dados requeridos:
 
-	{
+  {
     "id": number,
     "nome": string,
     "preco": number,
@@ -253,13 +252,13 @@ Dados requeridos:
 ```JSON
   Dados requeridos:
 
-  	{
-      "id": number,
-      "nome": string,
-      "preco": number,
-      "id_tipo": number,
-      "cpf_gerente": string
-   }
+  {
+    "id": number,
+    "nome": string,
+    "preco": number,
+    "id_tipo": number,
+    "cpf_gerente": string
+  }
 
 ```
 
@@ -274,7 +273,7 @@ Dados requeridos:
 ```JSON
 Dados requeridos:
 
-	{
+  {
     "id": number,
     "id_produto": number,
     "quantidade": number
@@ -287,11 +286,11 @@ Dados requeridos:
 ```JSON
 Dados requeridos:
 
-	{
+  {
     "id": number,
     "id_produto": number,
     "quantidade": number
-   }
+  }
 
 ```
 
@@ -300,7 +299,7 @@ Dados requeridos:
 ```JSON
 Dados requeridos:
 
-	{
+  {
     "id": number
   }
 
@@ -311,7 +310,7 @@ Dados requeridos:
 ```JSON
 Dados requeridos:
 
-	{
+  {
     "id": number
   }
 
@@ -328,7 +327,7 @@ Dados requeridos:
 ```JSON
 Dados requeridos:
 
-	{
+  {
     "id": number,
     "cpf_cliente": string,
     "cpf_funcionario": string,
@@ -343,7 +342,7 @@ Dados requeridos:
 ```JSON
 Dados requeridos:
 
-	{
+  {
     "id": number,
     "cpf_cliente": string,
     "cpf_funcionario": string,
@@ -358,7 +357,7 @@ Dados requeridos:
 ```JSON
 Dados requeridos:
 
-	{
+  {
     "id": number
   }
 
@@ -369,7 +368,7 @@ Dados requeridos:
 ```JSON
 Dados requeridos:
 
-	{
+  {
     "id": number
   }
 
