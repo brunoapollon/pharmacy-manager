@@ -96,6 +96,7 @@ Dados requeridos:
   Dados requeridos:
   {
 	  "cpf_funcionario": string,
+     "cpf_gerente": string
   }
 
 ```
@@ -106,6 +107,7 @@ Dados requeridos:
   Dados requeridos:
   {
 	  "cpf_funcionario": string,
+     "cpf_gerente": string
   }
 
 ```
