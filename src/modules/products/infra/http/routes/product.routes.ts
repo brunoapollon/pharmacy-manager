@@ -12,6 +12,6 @@ productRouter.patch('/update', ensureManager, productController.update);
 
 productRouter.get('/show/:id', productController.show);
 
-productRouter.get('/delete/:id', productController.delete);
+productRouter.delete('/delete/:id', productController.delete);
 
 export { productRouter };
