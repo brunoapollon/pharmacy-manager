@@ -84,7 +84,7 @@ Dados requeridos:
   Dados requeridos:
   {
     "id_gerente": number,
-	  "cpf_funcionario": string,
+    "cpf_funcionario": string,
     "cpf_gerente": string
   }
 
@@ -95,8 +95,8 @@ Dados requeridos:
 ```JSON
   Dados requeridos:
   {
-	  "cpf_funcionario": string,
-     "cpf_gerente": string
+    "cpf_funcionario": string,
+    "cpf_gerente": string
   }
 
 ```
@@ -106,8 +106,8 @@ Dados requeridos:
 ```JSON
   Dados requeridos:
   {
-	  "cpf_funcionario": string,
-     "cpf_gerente": string
+    "cpf_funcionario": string,
+    "cpf_gerente": string
   }
 
 ```
@@ -120,7 +120,7 @@ Dados requeridos:
   Dados requeridos:
   {
     "id_farmaceutico": number,
-	  "cpf_funcionario": string,
+    "cpf_funcionario": string,
     "cpf_gerente": string
   }
 
@@ -254,12 +254,12 @@ Dados requeridos:
   Dados requeridos:
 
   	{
-    "id": number,
-    "nome": string,
-    "preco": number,
-    "id_tipo": number,
-    "cpf_gerente": string
-  }
+      "id": number,
+      "nome": string,
+      "preco": number,
+      "id_tipo": number,
+      "cpf_gerente": string
+   }
 
 ```
 
@@ -291,7 +291,7 @@ Dados requeridos:
     "id": number,
     "id_produto": number,
     "quantidade": number
-  }
+   }
 
 ```
 
