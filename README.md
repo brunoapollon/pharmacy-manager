@@ -63,7 +63,7 @@ Dados requeridos:
 
 ```
 
-- `http://localhost:3333/functionary/delete` (`DELTE`) Rota de deletar de funcionários.
+- `http://localhost:3333/functionary/delete` (`DELETE`) Rota de deletar de funcionários.
 
 ```JSON
   Dados requeridos:
@@ -89,7 +89,7 @@ Dados requeridos:
 
 ```
 
-- `http://localhost:3333/manager/delete` (`DELTE`) Rota de deletar de gerentes.
+- `http://localhost:3333/manager/delete` (`DELETE`) Rota de deletar de gerentes.
 
 ```JSON
   Dados requeridos:
@@ -187,7 +187,7 @@ Dados requeridos:
 
 ```
 
-- `http://localhost:3333/client/delete` (`DELTE`) Rota de deletar de clientes.
+- `http://localhost:3333/client/delete` (`DELETE`) Rota de deletar de clientes.
 
 ```JSON
   Dados requeridos:
@@ -227,7 +227,7 @@ Dados requeridos:
 
 - `http://localhost:3333/type_product/show/:id` (`GET`) Rota de vizualização de tipos de produtos.
 
-- `http://localhost:3333/type_product/delete/:id` (`DELTE`) Rota de deletar de tipos de produtos.
+- `http://localhost:3333/type_product/delete/:id` (`DELETE`) Rota de deletar de tipos de produtos.
 
 - `http://localhost:3333/type_product/list` (`GET`) Rota de listagem de tipos de produtos.
 
@@ -264,7 +264,7 @@ Dados requeridos:
 
 - `http://localhost:3333/product/show/:id` (`GET`) Rota de vizualização de produtos.
 
-- `http://localhost:3333/product/delete/:id` (`DELTE`) Rota de deletar de produtos.
+- `http://localhost:3333/product/delete/:id` (`DELETE`) Rota de deletar de produtos.
 
 ## Estoque
 
@@ -294,7 +294,7 @@ Dados requeridos:
 
 ```
 
-- `http://localhost:3333/stock/delete` (`DELTE`) Rota de exclusão de estoque.
+- `http://localhost:3333/stock/delete` (`DELETE`) Rota de exclusão de estoque.
 
 ```JSON
 Dados requeridos:
