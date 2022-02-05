@@ -44,6 +44,9 @@ class CreateSaleService {
     )
       throw new AppError('missing data for sale');
 
+    if (cpf_cliente === cpf_funcionario)
+      throw new AppError('a functionary cannot self-service.');
+
     const saleExists = await this.saleRepository.findByID(id);
 
     if (saleExists) throw new AppError('there is already an sale with this id');
