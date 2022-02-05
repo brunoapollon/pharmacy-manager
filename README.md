@@ -19,6 +19,37 @@ Esse projeto é uma API desenvolvida para consumir um banco de dados criado na d
 - O servidor pode ser iniciado com `yarn dev`, onde se tem acesso pelo `http://localhost:3333`
 - A maneira de utilizar e as informações necessárias estão descritas em cada rota da aplicação.
 
+
+# Contribuidores
+<table align="center">
+  <tr>
+    <td align="center">
+      <a href="#">
+        <img src="https://avatars.githubusercontent.com/u/65829386?v=4" width="100px;" alt="Foto da May no GitHub"/><br>
+        <sub>
+          <b>Marayah Sabelle</b>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="#">
+        <img src="https://avatars.githubusercontent.com/u/75625915?v=4" width="100px;" alt="Foto do Lins"/><br>
+        <sub>
+          <b>Thiago Lins</b>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="#">
+        <img src="https://avatars.githubusercontent.com/u/68339530?v=4" width="100px;" alt="Foto do Bruno"/><br>
+        <sub>
+          <b>Bruno Lopes</b>
+        </sub>
+      </a>
+    </td>
+  </tr>
+</table>
+
 # Rotas da aplicação
 
 ## Funcionários
