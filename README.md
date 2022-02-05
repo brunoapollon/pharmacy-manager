@@ -64,7 +64,8 @@ Dados requeridos:
     "nome": string,
     "endereco": string,
     "telefone": string,
-    "email": string
+    "email": string,
+    "cpf_gerente": string
   }
 
 ```
