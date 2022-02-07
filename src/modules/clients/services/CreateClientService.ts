@@ -31,7 +31,7 @@ class CreateClientService {
     const clientExists = await this.clientRepository.findByCPF(cpf);
 
     if (clientExists)
-      throw new AppError('there is already an employee with this cpf');
+      throw new AppError('there is already an client with this cpf');
 
     const client = await this.clientRepository.create({
       cpf,
